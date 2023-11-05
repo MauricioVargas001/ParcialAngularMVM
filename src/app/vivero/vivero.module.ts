@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViveroComponent } from './vivero.component';
+import { ViveroListComponent } from './vivero-list/vivero-list.component'
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ViveroComponent]
+  exports: [ViveroListComponent],
+  declarations: [ViveroListComponent]
 })
-export class ViveroModule { }
+export class ViveroMainModule { }
