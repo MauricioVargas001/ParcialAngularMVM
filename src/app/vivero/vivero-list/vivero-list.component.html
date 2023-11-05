@@ -1,21 +1,25 @@
+<table class="table table-sm">
+  <thead class="table table-dark">
+    <tr class="d-flex">
+    <th class="col-1">#</th>
+    <th class="col-2">Nombre comun</th>
+    <th class="col-2">Tipo</th>
+    <th class="col-2">Clima</th>
+  </tr>
+</thead>
+<tbody>
+    <tr class="d-flex" *ngFor="let i of plants">
+      <th class="col-1">{{i.id}}</th>
+      <td class="col-2">{{i.nombre_comun}}</td>
+      <td class="col-2">{{i.tipo}}</td>
+      <td class="col-2">{{i.clima}}</td>
+    </tr>
+</tbody>
+</table>
 
-<div class="container-fluid">
-  <table class="info-table">
-    <tr>
-      <th class="id">#</th>
-      <th>Nombre Común</th>
-      <th>Tipo</th>
-      <th>Clima</th>
-    </tr>
-    <tr *ngFor="let i of plants">
-      <td>{{i.id}}</td>
-      <td>{{i.nombre_comun}}</td>
-      <td>{{i.tipo}}</td>
-      <td>{{i.clima}}</td>  
-    </tr>
-  </table>
-</div>
-<br>
+<!-- <div *ngFor="let marca of tusegundos_count | keyvalue">
+<a>Total {{marca.key}}: {{marca.value}}</a>
+</div> -->
 
 <div class="footer">
 
@@ -23,3 +27,6 @@
   <p>Contact us: +57 3102105253 - info@viveroelotonio.com - @viveroelotonio</p>
 
 </div>
+
+
+
