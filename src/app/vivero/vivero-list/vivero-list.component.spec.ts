@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { faker } from '@faker-js/faker';
-
 import { ViveroListComponent } from './vivero-list.component';
 import { Plants } from '../plants';
 import { ViveroService } from '../vivero.service';
@@ -29,7 +28,7 @@ describe('ViveroListComponent', () => {
     component = fixture.componentInstance;
 
     for(let i = 0; i < 3; i++) {
-      const planta = new Plants(
+      const plant = new Plants(
         faker.number.int(),
         faker.lorem.sentence(),
         faker.lorem.sentence(),
@@ -38,7 +37,7 @@ describe('ViveroListComponent', () => {
         faker.lorem.sentence(),
         faker.lorem.sentence(),
       );
-      component.plants.push(planta);
+      component.plants.push(plant);
     }
     fixture.detectChanges();
     debug = fixture.debugElement;
@@ -52,11 +51,21 @@ describe('ViveroListComponent', () => {
     expect(debug.queryAll(By.css('table')))
   });
 
-  it('Should have 4 headers <th> element', () => {
-    expect(debug.queryAll(By.css('th'))).toHaveSize(4)
+  it('Should have 1 headers <th> element', () => {
+    expect(debug.queryAll(By.css('thead'))).toHaveSize(1)
   });
 
-  it('Should have 3 registers or 4 <tr> element', () => {
+  it('Should have 4 <tr> element', () => {
     expect(debug.queryAll(By.css('tr'))).toHaveSize(4)
   });
+
+  it('Should have 3  <td> element', () => {
+    expect(debug.queryAll(By.css('td'))).toHaveSize(9)
+  });
+
+  it('Should have 3 registers <tr> element in body', () => {
+    expect(debug.queryAll(By.css('tbody tr'))).toHaveSize(3)
+  });
+
 });
+
